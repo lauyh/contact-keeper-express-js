@@ -1,3 +1,4 @@
 {
-	"mongoURI": "mongodb://localhost:27017/contact_keeper"
+	"mongoURI": "mongodb://localhost:27017/contact_keeper",
+	"jwtSecret": "Bd!FvAp4#*u!px%47K_>xpj"
 }
