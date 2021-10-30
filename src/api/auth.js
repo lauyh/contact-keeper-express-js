@@ -1,25 +1,30 @@
 const express = require('express');
-const router = express.Router();
-const { body, validationResult } = require("express-validator");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+
 const User = require("../models/User");
+const {isAuth} = require("../middlewares");
+const { body, validationResult } = require("express-validator");
 
-
- /* 
+const router = express.Router();
+ /**
   * @route    GET api/auth
   * @desc     Get logged in user
   * @access   Private
   */
-router.get('/', (req, res) => {
-  res.json({
-    message: 'Get logged in user'
-  });
+router.get('/', isAuth, async(req, res) => {
+  try{
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user)
+  }catch(err){
+    console.error(err.message);
+    return res.status(500).json({message: "Internal Server Error"});
+  }
 });
 
 
- /* 
+ /** 
   * @route    POST api/auth
   * @desc     Auth user & get token
   * @acess    Public

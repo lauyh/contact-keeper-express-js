@@ -5,7 +5,7 @@ const auth = require("./auth");
 const users = require("./users");
 const contacts = require("./contacts");
 
-/*
+/**
  * @route  GET   /api
  */
 router.get("/", (req, res) => {
