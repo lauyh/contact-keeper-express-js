@@ -8,7 +8,7 @@
     "server": "nodemon src/index.js",
     "client": "npm start --prefix client",
     "clientinstall": "yarn install --prefix client",
-    "dev" : "concurrently \"yarn server\" \"npm run client\"",
+    "dev": "concurrently \"yarn server\" \"npm run client\"",
     "lint": "eslint --fix src",
     "test": "mocha --exit"
   },
