@@ -3,6 +3,9 @@
 This project was bootstrapped with [Express API Starter](https://github.com/w3cj/create-express-api).
 This project is to serve as an API endpoint for contact keeper React Frontend.
 
+## Frontend
+The react front end is in the client folder
+
 ## Included Library
 
 Includes API Server utilities:
