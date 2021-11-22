@@ -12,7 +12,6 @@ import {
 export const AuthReducer = (state, action) => {
     switch (action.type){
         case REGISTER_SUCESS:
-            console.log("action payload",action.payload)
             localStorage.setItem("token", action.payload.token)
             return {
                 ...state,
@@ -36,7 +35,6 @@ export const AuthReducer = (state, action) => {
                 error: null
             }
         case USER_LOADED:
-            console.log("updaing the state after user is loaded")
             return {
                 ...state,
                 isAuthenticated: true,
